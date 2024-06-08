@@ -10,11 +10,11 @@ const WSServer = ws(app)
 const aWss = WSServer.getWss()
 app.ws('/echo', (ws, req) => userSocket(ws, aWss))
 
-app.use(
-  cors({
-    origin: [process.env.CLIENT_URL],
-  })
-)
+app.use(cors())
+//   cors({
+//     origin: [process.env.CLIENT_URL],
+//   })
+// )
 
 app.use(express.json())
 
